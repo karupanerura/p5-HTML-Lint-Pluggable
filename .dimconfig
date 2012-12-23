@@ -1,0 +1,8 @@
+#!perl
+# This file is managed by /Users/karupanerura/perl5/perlbrew/perls/perl-5.16.1/bin/dim.
+{
+  dist => 'HTML::Lint::Pluggable',
+  distdir => 'HTML-Lint-Pluggable',
+  module => 'HTML::Lint::Pluggable',
+  template => 'Default'
+}
