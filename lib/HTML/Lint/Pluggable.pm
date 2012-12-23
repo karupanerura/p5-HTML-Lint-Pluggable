@@ -4,12 +4,11 @@ use warnings;
 
 our $VERSION = '0.01';
 
-use lib "$ENV{HOME}/perl5/perlbrew/perls/perl-5.16.1/lib/site_perl/5.16.1";
 use parent qw/ HTML::Lint /;
+
+use Carp qw/croak/;
 use Class::Load qw/load_class/;
 use Hash::Util::FieldHash qw/fieldhash/;
-
-our $PLUGIN_NAMESPACE = 'HTML::Lint::Pluggable';
 
 sub load_plugins {
     my $self = shift;
@@ -22,7 +21,7 @@ sub load_plugins {
 
 sub load_plugin {
     my ($self, $plugin, $conf) = @_;
-    $plugin = "${PLUGIN_NAMESPACE}::${plugin}" unless $plugin =~ s/^\+//;
+    $plugin = "HTML::Lint::Pluggable::${plugin}" unless $plugin =~ s/^\+//;
     load_class($plugin);
     $plugin->init($self, $conf);
 }
@@ -31,8 +30,8 @@ fieldhash my %OVERRIDED_CODES;
 my %ROOTCODE;
 sub override {
     my($self, $method, $code) = @_;
+    my $class = ref($self) or croak('this method can called by instance only.');
 
-    my $class = ref $self;
     $OVERRIDED_CODES{$self}          ||= +{};
     $ROOTCODE{$class}                ||= +{};
     $OVERRIDED_CODES{$self}{$method} ||= $ROOTCODE{$class}{$method} || $class->can($method);
@@ -61,7 +60,7 @@ __END__
 
 =head1 NAME
 
-HTML::Lint::Pluggable - Perl extention to do something
+HTML::Lint::Pluggable - plugin system for HTML::Lint
 
 =head1 VERSION
 
@@ -86,15 +85,70 @@ This document describes HTML::Lint::Pluggable version 0.01.
 
 =head1 DESCRIPTION
 
-# TODO
+HTML::Lint::Pluggable adds plugin system for L<HTML::Lint>.
+
+=head1 WHY CREATED THIS MODULE?
+
+L<HTML::Lint> is useful. But, L<HTML::Lint> can interpret *only* for rules of HTML4.
+and, L<HTML::Lint> gives an error of "Character char should be written as entity" for such as for multi-byte characters.
+However, you are often no problem if they are properly encoded.
+
+These problems can be solved easily to facilitate the various hooks for L<HTML::Lint>.
 
 =head1 INTERFACE
 
-=head2 Functions
+=head2 Methods
 
-=head3 C<< hello() >>
+=head3 C<< $lint->load_plugin($module_name[, \%config]) >>
 
-# TODO
+This method loads plugin for the instance.
+
+$module_name: package name of the plugin. You can write it as two form like DBIx::Class:
+
+    $lint->load_plugin("HTML5"); # => loads HTML::Lint::Pluggable::HTML5
+
+If you want to load a plugin in your own name space, use '+' character before package name like following:
+
+    $lint->load_plugin("+MyApp::Plugin::XHTML"); # => loads MyApp::Plugin::XHTML
+
+
+=head3 C<< $lint->load_plugins($module_name[, \%config ], ...) >>
+
+Load multiple plugins at one time.
+
+   $lint->load_plugins(
+       qw/HTML5/,
+       WhiteList => +{
+           rule => +{
+               'attr-unknown' => sub {
+                   my $param = shift;
+                   if ($param->{tag} =~ /input|textarea/ && $param->{attr} eq 'istyle') {
+                       return 1;
+                   }
+                   else {
+                       return 0;
+                   }
+               },
+           }
+       }
+   ); # => loads HTML::Lint::Pluggable::HTML5, HTML::Lint::Pluggable::WhiteList
+
+this code is same as:
+
+   $lint->load_plugin('HTML5'); # => loads HTML::Lint::Pluggable::HTML5
+   $lint->load_plugin(WhiteList => +{
+       rule => +{
+           'attr-unknown' => sub {
+               my $param = shift;
+               if ($param->{tag} =~ /input|textarea/ && $param->{attr} eq 'istyle') {
+                   return 1;
+               }
+               else {
+                   return 0;
+               }
+           },
+       }
+   }); # => loads HTML::Lint::Pluggable::WhiteList
 
 =head1 DEPENDENCIES
 
@@ -108,7 +162,7 @@ to cpan-RT.
 
 =head1 SEE ALSO
 
-L<perl>
+L<HTML::Lint>
 
 =head1 AUTHOR
 
