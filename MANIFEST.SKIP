@@ -32,6 +32,7 @@
 \bBuild.COM$
 \bBUILD.COM$
 \bbuild.com$
+\b_build
 
 # Avoid temp and backup files.
 ~$
@@ -65,3 +66,5 @@
 \.o(?:|bj|ld|ut)$
 ^nytprof
 ^MYMETA\.
+
+^HTML-Lint-Pluggable-

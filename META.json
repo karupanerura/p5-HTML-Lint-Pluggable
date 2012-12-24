@@ -1,0 +1,80 @@
+{
+   "abstract" : "plugin system for HTML::Lint",
+   "author" : [
+      "Kenta Sato E<lt>karupa@cpan.orgE<gt>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120630",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "HTML-Lint-Pluggable",
+   "no_index" : {
+      "directory" : [
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.02",
+            "Module::Build::Pluggable::Repository" : "0.01",
+            "Pod::Markdown" : "0",
+            "Test::More" : "0.88",
+            "Test::Requires" : "0.06"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.40",
+            "Module::Build::Pluggable" : "0.04",
+            "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.02",
+            "Module::Build::Pluggable::Repository" : "0.01"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Carp" : "0",
+            "Class::Load" : "0",
+            "HTML::Entities" : "0",
+            "HTML::Lint" : "0",
+            "Hash::Util::FieldHash" : "0",
+            "List::MoreUtils" : "0",
+            "parent" : "0",
+            "perl" : "5.009_004"
+         }
+      }
+   },
+   "provides" : {
+      "HTML::Lint::Pluggable" : {
+         "file" : "lib/HTML/Lint/Pluggable.pm",
+         "version" : "0.01"
+      },
+      "HTML::Lint::Pluggable::HTML5" : {
+         "file" : "lib/HTML/Lint/Pluggable/HTML5.pm",
+         "version" : "0.01"
+      },
+      "HTML::Lint::Pluggable::TinyEntitesEscapeRule" : {
+         "file" : "lib/HTML/Lint/Pluggable/TinyEntitesEscapeRule.pm",
+         "version" : "0.01"
+      },
+      "HTML::Lint::Pluggable::WhiteList" : {
+         "file" : "lib/HTML/Lint/Pluggable/WhiteList.pm",
+         "version" : "0.01"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ],
+      "repository" : {
+         "url" : "git://github.com/karupanerura/p5-HTML-Lint-Pluggable.git"
+      }
+   },
+   "version" : "0.01"
+}

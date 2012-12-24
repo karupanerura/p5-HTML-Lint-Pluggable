@@ -1,29 +1,51 @@
 ---
-abstract: 'Perl extention to do something'
+abstract: 'plugin system for HTML::Lint'
 author:
-  - 'Kenta Sato <karupa@cpan.org>'
+  - 'Kenta Sato E<lt>karupa@cpan.orgE<gt>'
 build_requires:
-  ExtUtils::MakeMaker: 6.59
+  Module::Build::Pluggable::ReadmeMarkdownFromPod: 0.02
+  Module::Build::Pluggable::Repository: 0.01
+  Pod::Markdown: 0
   Test::More: 0.88
   Test::Requires: 0.06
 configure_requires:
-  ExtUtils::MakeMaker: 6.59
-distribution_type: module
-dynamic_config: 1
-generated_by: 'Module::Install version 1.06'
+  Module::Build: 0.40
+  Module::Build::Pluggable: 0.04
+  Module::Build::Pluggable::ReadmeMarkdownFromPod: 0.02
+  Module::Build::Pluggable::Repository: 0.01
+dynamic_config: 0
+generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120630'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-module_name: HTML::Lint::Pluggable
 name: HTML-Lint-Pluggable
 no_index:
   directory:
     - inc
-    - t
-    - xt
+provides:
+  HTML::Lint::Pluggable:
+    file: lib/HTML/Lint/Pluggable.pm
+    version: 0.01
+  HTML::Lint::Pluggable::HTML5:
+    file: lib/HTML/Lint/Pluggable/HTML5.pm
+    version: 0.01
+  HTML::Lint::Pluggable::TinyEntitesEscapeRule:
+    file: lib/HTML/Lint/Pluggable/TinyEntitesEscapeRule.pm
+    version: 0.01
+  HTML::Lint::Pluggable::WhiteList:
+    file: lib/HTML/Lint/Pluggable/WhiteList.pm
+    version: 0.01
 requires:
-  perl: 5.8.1
+  Carp: 0
+  Class::Load: 0
+  HTML::Entities: 0
+  HTML::Lint: 0
+  Hash::Util::FieldHash: 0
+  List::MoreUtils: 0
+  parent: 0
+  perl: 5.009_004
 resources:
   license: http://dev.perl.org/licenses/
+  repository: git://github.com/karupanerura/p5-HTML-Lint-Pluggable.git
 version: 0.01

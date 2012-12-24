@@ -1,8 +1,8 @@
-# for HTML-Lint-Pluggable
-# Makefile.PL
-Module::Install
-Module::Install::AuthorTests
-Module::Install::Repository
+# for Plack-Middleware-HTMLLint
+# Build.PL
+Software::License
+Module::Build::Pluggable
+Module::Build::Pluggable::ReadmeMarkdownFromPod
 
 # author's tests
 Test::Pod
