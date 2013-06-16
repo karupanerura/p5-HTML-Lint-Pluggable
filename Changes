@@ -2,6 +2,10 @@ Revision history for Perl extension HTML::Lint::Pluggable
 
 {{$NEXT}}
 
+0.02 2013-06-16T13:57:45Z
+    - minil migrate.
+    - no use fieldhash.
+
 0.01 2012-12-24
     - original version; created by dim
       at Sun Dec 23 22:22:20 2012.

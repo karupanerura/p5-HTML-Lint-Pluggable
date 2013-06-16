@@ -28,9 +28,7 @@
          "requires" : {
             "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.04",
             "Module::Build::Pluggable::Repository" : "0.01",
-            "Pod::Markdown" : "0",
-            "Test::More" : "0.88",
-            "Test::Requires" : "0.06"
+            "Pod::Markdown" : "0"
          }
       },
       "configure" : {
@@ -39,7 +37,7 @@
             "CPAN::Meta::Prereqs" : "0",
             "Module::Build" : "0.38",
             "Module::Build::Pluggable" : "0.04",
-            "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.02",
+            "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.04",
             "Module::Build::Pluggable::Repository" : "0.01"
          }
       },
@@ -58,10 +56,15 @@
             "Class::Load" : "0",
             "HTML::Entities" : "0",
             "HTML::Lint" : "0",
-            "Hash::Util::FieldHash" : "0",
             "List::MoreUtils" : "0",
             "parent" : "0",
             "perl" : "5.009_004"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.88",
+            "Test::Requires" : "0.06"
          }
       }
    },
@@ -77,5 +80,5 @@
          "web" : "https://github.com/karupanerura/p5-HTML-Lint-Pluggable"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
