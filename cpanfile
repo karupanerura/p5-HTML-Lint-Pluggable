@@ -2,7 +2,6 @@ requires 'Carp';
 requires 'Class::Load';
 requires 'HTML::Entities';
 requires 'HTML::Lint';
-requires 'Hash::Util::FieldHash';
 requires 'List::MoreUtils';
 requires 'parent';
 requires 'perl', '5.009_004';
