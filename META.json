@@ -1,10 +1,10 @@
 {
    "abstract" : "plugin system for HTML::Lint",
    "author" : [
-      "Kenta Sato E<lt>karupa@cpan.orgE<gt>"
+      "Kenta Sato <karupa@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120630",
+   "generated_by" : "Minilla/v0.0.53, CPAN::Meta::Converter version 2.130880",
    "license" : [
       "perl_5"
    ],
@@ -15,13 +15,18 @@
    "name" : "HTML-Lint-Pluggable",
    "no_index" : {
       "directory" : [
-         "inc"
+         "t",
+         "xt",
+         "inc",
+         "share",
+         "eg",
+         "examples"
       ]
    },
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.02",
+            "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.04",
             "Module::Build::Pluggable::Repository" : "0.01",
             "Pod::Markdown" : "0",
             "Test::More" : "0.88",
@@ -30,10 +35,21 @@
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.40",
+            "CPAN::Meta" : "0",
+            "CPAN::Meta::Prereqs" : "0",
+            "Module::Build" : "0.38",
             "Module::Build::Pluggable" : "0.04",
             "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.02",
             "Module::Build::Pluggable::Repository" : "0.01"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "Pod::Wordlist::hanekomu" : "0",
+            "Test::CPAN::Meta" : "0",
+            "Test::MinimumVersion" : "0.10108",
+            "Test::Pod" : "1.41",
+            "Test::Spelling" : "0"
          }
       },
       "runtime" : {
@@ -49,31 +65,16 @@
          }
       }
    },
-   "provides" : {
-      "HTML::Lint::Pluggable" : {
-         "file" : "lib/HTML/Lint/Pluggable.pm",
-         "version" : "0.01"
-      },
-      "HTML::Lint::Pluggable::HTML5" : {
-         "file" : "lib/HTML/Lint/Pluggable/HTML5.pm",
-         "version" : "0.01"
-      },
-      "HTML::Lint::Pluggable::TinyEntitesEscapeRule" : {
-         "file" : "lib/HTML/Lint/Pluggable/TinyEntitesEscapeRule.pm",
-         "version" : "0.01"
-      },
-      "HTML::Lint::Pluggable::WhiteList" : {
-         "file" : "lib/HTML/Lint/Pluggable/WhiteList.pm",
-         "version" : "0.01"
-      }
-   },
-   "release_status" : "stable",
+   "release_status" : "unstable",
    "resources" : {
-      "license" : [
-         "http://dev.perl.org/licenses/"
-      ],
+      "bugtracker" : {
+         "web" : "https://github.com/karupanerura/p5-HTML-Lint-Pluggable/issues"
+      },
+      "homepage" : "https://github.com/karupanerura/p5-HTML-Lint-Pluggable",
       "repository" : {
-         "url" : "git://github.com/karupanerura/p5-HTML-Lint-Pluggable.git"
+         "type" : "git",
+         "url" : "git://github.com/karupanerura/p5-HTML-Lint-Pluggable.git",
+         "web" : "https://github.com/karupanerura/p5-HTML-Lint-Pluggable"
       }
    },
    "version" : "0.01"
