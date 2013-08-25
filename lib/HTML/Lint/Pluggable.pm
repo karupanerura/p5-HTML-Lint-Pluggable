@@ -46,10 +46,11 @@ sub override {
     my ($self, $method, $code) = @_;
     my $class = ref($self) or croak('this method can called by instance only.');
 
-    {
-        my $override_code = $code->($class->can($method));
+    my $override_code = $code->($class->can($method));
 
-        no strict 'refs';
+    {
+        no strict   'refs'; ## no critic
+        no warnings 'redefine';
         *{"${class}::${method}"} = $override_code;
     }
 }
