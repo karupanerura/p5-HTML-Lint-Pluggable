@@ -4,7 +4,7 @@ HTML::Lint::Pluggable - plugin system for HTML::Lint
 
 # VERSION
 
-This document describes HTML::Lint::Pluggable version 0.02.
+This document describes HTML::Lint::Pluggable version 0.03.
 
 # SYNOPSIS
 

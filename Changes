@@ -2,6 +2,9 @@ Revision history for Perl extension HTML::Lint::Pluggable
 
 {{$NEXT}}
 
+0.03 2013-08-25T02:46:58Z
+    - no warnings redefine in HTML::Lint::Pluggable#override. (nigelm)
+
 0.02 2013-06-16T13:57:45Z
     - minil migrate.
     - no use fieldhash.
