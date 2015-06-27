@@ -33,3 +33,5 @@ cover_db*
 /Build
 !Build/
 !META.json
+/Build.bat
+!LICENSE

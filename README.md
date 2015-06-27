@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/karupanerura/p5-HTML-Lint-Pluggable.svg?branch=master)](https://travis-ci.org/karupanerura/p5-HTML-Lint-Pluggable)
 # NAME
 
 HTML::Lint::Pluggable - plugin system for HTML::Lint
@@ -25,15 +26,15 @@ This document describes HTML::Lint::Pluggable version 0.03.
 
 # DESCRIPTION
 
-HTML::Lint::Pluggable adds plugin system for [HTML::Lint](http://search.cpan.org/perldoc?HTML::Lint).
+HTML::Lint::Pluggable adds plugin system for [HTML::Lint](https://metacpan.org/pod/HTML::Lint).
 
 # WHY CREATED THIS MODULE?
 
-[HTML::Lint](http://search.cpan.org/perldoc?HTML::Lint) is useful. But, [HTML::Lint](http://search.cpan.org/perldoc?HTML::Lint) can interpret \*only\* for rules of HTML4.
-and, [HTML::Lint](http://search.cpan.org/perldoc?HTML::Lint) gives an error of "Character char should be written as entity" for such as for multi-byte characters.
+[HTML::Lint](https://metacpan.org/pod/HTML::Lint) is useful. But, [HTML::Lint](https://metacpan.org/pod/HTML::Lint) can interpret \*only\* for rules of HTML4.
+and, [HTML::Lint](https://metacpan.org/pod/HTML::Lint) gives an error of "Character char should be written as entity" for such as for multi-byte characters.
 However, you are often no problem if they are properly encoded.
 
-These problems can be solved easily to facilitate the various hooks for [HTML::Lint](http://search.cpan.org/perldoc?HTML::Lint).
+These problems can be solved easily to facilitate the various hooks for [HTML::Lint](https://metacpan.org/pod/HTML::Lint).
 
 # INTERFACE
 
@@ -50,8 +51,6 @@ $module\_name: package name of the plugin. You can write it as two form like DBI
 If you want to load a plugin in your own name space, use '+' character before package name like following:
 
     $lint->load_plugin("+MyApp::Plugin::XHTML"); # => loads MyApp::Plugin::XHTML
-
-
 
 ### `$lint->load_plugins($module_name[, \%config ], ...)`
 
@@ -103,7 +102,7 @@ to cpan-RT.
 
 # SEE ALSO
 
-[HTML::Lint](http://search.cpan.org/perldoc?HTML::Lint)
+[HTML::Lint](https://metacpan.org/pod/HTML::Lint)
 
 # AUTHOR
 
