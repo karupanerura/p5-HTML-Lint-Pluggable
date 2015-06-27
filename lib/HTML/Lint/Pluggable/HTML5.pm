@@ -3,7 +3,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use parent qw/ HTML::Lint::Pluggable::WhiteList /;
 use List::MoreUtils qw/any/;
@@ -65,7 +65,7 @@ HTML::Lint::Pluggable::HTML5 - allow HTML5 tags and attributes.
 
 =head1 VERSION
 
-This document describes HTML::Lint::Pluggable::HTML5 version 0.03.
+This document describes HTML::Lint::Pluggable::HTML5 version 0.04.
 
 =head1 DEPENDENCIES
 

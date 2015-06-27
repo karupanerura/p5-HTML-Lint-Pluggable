@@ -26,18 +26,8 @@
       ]
    },
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.04",
-            "Module::Build::Pluggable::Repository" : "0.01",
-            "Pod::Markdown" : "0"
-         }
-      },
       "configure" : {
          "requires" : {
-            "Module::Build::Pluggable" : "0.04",
-            "Module::Build::Pluggable::ReadmeMarkdownFromPod" : "0.04",
-            "Module::Build::Pluggable::Repository" : "0.01",
             "Module::Build::Tiny" : "0.035"
          }
       },
@@ -52,19 +42,17 @@
       },
       "runtime" : {
          "requires" : {
-            "Carp" : "0",
             "Class::Load" : "0",
             "HTML::Entities" : "0",
             "HTML::Lint" : "0",
             "List::MoreUtils" : "0",
             "parent" : "0",
-            "perl" : "5.009_004"
+            "perl" : "5.008_001"
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.88",
-            "Test::Requires" : "0.06"
+            "Test::More" : "0"
          }
       }
    },
@@ -80,6 +68,6 @@
          "web" : "https://github.com/karupanerura/p5-HTML-Lint-Pluggable"
       }
    },
-   "version" : "0.03",
+   "version" : "0.04",
    "x_authority" : "cpan:KARUPA"
 }
