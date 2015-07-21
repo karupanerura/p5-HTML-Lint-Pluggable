@@ -4,7 +4,7 @@
       "Kenta Sato <karupa@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.4.1, CPAN::Meta::Converter version 2.150001",
+   "generated_by" : "Minilla/v2.4.1, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -69,5 +69,9 @@
       }
    },
    "version" : "0.04",
-   "x_authority" : "cpan:KARUPA"
+   "x_authority" : "cpan:KARUPA",
+   "x_contributors" : [
+      "Klaus S. Madsen <ksm@jobindex.dk>"
+   ],
+   "x_serialization_backend" : "JSON::PP version 2.27300"
 }
