@@ -13,6 +13,16 @@ my $html5 = q{
 </html>
 };
 
+my $passing_html5 = q{
+<html>
+<head><title>Test</title></head>
+<body>
+<div tabindex="42"></div>
+<div translate="no">Test</div>
+</body>
+</html>
+};
+
 my $has_entites_html = q{
 <html>
 <head><title>hoge</title></head>
@@ -46,6 +56,15 @@ subtest 'html5' => sub {
         $lint->parse($html5);
         is scalar($lint->errors), 3;
     };
+
+    subtest 'passing html5' => sub {
+        my $lint = HTML::Lint::Pluggable->new;
+        $lint->load_plugins(qw/HTML5/);
+        $lint->parse($passing_html5);
+        use Data::Dumper;
+        say STDERR Dumper($lint->errors);
+        is scalar($lint->errors), 0;
+    }
 };
 
 subtest 'tiny entities escape rule' => sub {
