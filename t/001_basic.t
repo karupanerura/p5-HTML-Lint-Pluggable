@@ -18,7 +18,7 @@ my $passing_html5 = q{
 <head><title>Test</title></head>
 <body>
 <div tabindex="42"></div>
-<div translate="no">Test</div>
+<div translate="no">Test&pm;</div>
 <input type="number" min="2" max="42">
 </body>
 </html>
