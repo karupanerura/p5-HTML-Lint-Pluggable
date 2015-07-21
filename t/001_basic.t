@@ -21,6 +21,7 @@ my $passing_html5 = q{
 <div translate="no">Test&pm;</div>
 <input type="number" min="2" max="42">
 <iframe allowfullscreen></iframe>
+<button type="submit" formaction="/save">Save</button>
 </body>
 </html>
 };
