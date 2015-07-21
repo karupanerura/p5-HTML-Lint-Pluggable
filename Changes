@@ -2,6 +2,9 @@ Revision history for Perl extension HTML::Lint::Pluggable
 
 {{$NEXT}}
 
+0.05 2015-07-21T14:54:46Z
+    - Fixed some HTML5 spec implementations. (ksmadsen)
+
 0.04 2015-06-27T06:55:41Z
     - fixed deps.
 

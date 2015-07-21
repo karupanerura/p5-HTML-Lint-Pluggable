@@ -68,7 +68,7 @@
          "web" : "https://github.com/karupanerura/p5-HTML-Lint-Pluggable"
       }
    },
-   "version" : "0.04",
+   "version" : "0.05",
    "x_authority" : "cpan:KARUPA",
    "x_contributors" : [
       "Klaus S. Madsen <ksm@jobindex.dk>"
