@@ -2,12 +2,12 @@ package HTML::Lint::Pluggable;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use parent qw/ HTML::Lint /;
 
 use Carp qw/croak/;
-use Class::Load qw/load_class/;
+use Module::Load ();
 
 sub new {
     my $class = shift;
@@ -38,7 +38,7 @@ sub load_plugins {
 sub load_plugin {
     my ($self, $plugin, $conf) = @_;
     $plugin = "HTML::Lint::Pluggable::${plugin}" unless $plugin =~ s/^\+//;
-    load_class($plugin);
+    Module::Load::load($plugin);
     $plugin->init($self, $conf);
 }
 

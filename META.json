@@ -42,10 +42,10 @@
       },
       "runtime" : {
          "requires" : {
-            "Class::Load" : "0",
             "HTML::Entities" : "0",
             "HTML::Lint" : "0",
             "List::MoreUtils" : "0",
+            "Module::Load" : "0",
             "parent" : "0",
             "perl" : "5.008_001"
          }

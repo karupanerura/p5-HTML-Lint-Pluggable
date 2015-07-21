@@ -1,4 +1,4 @@
-requires 'Class::Load';
+requires 'Module::Load';
 requires 'HTML::Entities';
 requires 'HTML::Lint';
 requires 'List::MoreUtils';
