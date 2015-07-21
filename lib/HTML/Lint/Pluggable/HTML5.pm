@@ -17,7 +17,7 @@ my %html5_attr = (
     area     => +{ map { $_ => 1 } qw/media hreflang rel/ },
     base     => +{ map { $_ => 1 } qw/target/ },
     meta     => +{ map { $_ => 1 } qw/charset/ },
-    input    => +{ map { $_ => 1 } qw/autofocus placeholder form required autocompletemin max multiple pattern step dirname formaction formenctype formmethod formnovalidate formtarget/ },
+    input    => +{ map { $_ => 1 } qw/autofocus placeholder form required autocomplete min max multiple pattern step dirname formaction formenctype formmethod formnovalidate formtarget/ },
     select   => +{ map { $_ => 1 } qw/autofocus form required/ },
     textarea => +{ map { $_ => 1 } qw/autofocus placeholder form required dirname maxlength wrap/ },
     button   => +{ map { $_ => 1 } qw/autofocus formaction formenctype formmethod formnovalidate formtarget/ },
