@@ -64,8 +64,6 @@ subtest 'html5' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->load_plugins(qw/HTML5/);
         $lint->parse($passing_html5);
-        use Data::Dumper;
-        say STDERR Dumper($lint->errors);
         is scalar($lint->errors), 0;
     }
 };
