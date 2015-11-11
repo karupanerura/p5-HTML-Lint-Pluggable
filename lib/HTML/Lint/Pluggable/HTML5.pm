@@ -8,7 +8,7 @@ our $VERSION = '0.05';
 use parent qw/ HTML::Lint::Pluggable::WhiteList /;
 use List::MoreUtils qw/any/;
 
-my %html5_tag = map { $_ => 1 } qw/article aside audio canvas command datalist details embed figcaption figure footer header hgroup keygen mark menu meter nav output progress section source summary time video rp rt ruby wbr/;
+my %html5_tag = map { $_ => 1 } qw/article aside audio canvas command datalist details embed figcaption figure footer header hgroup keygen main mark menu meter nav output progress section source summary time video rp rt ruby wbr/;
 
 my %html5_global_attr = map { $_ => 1 } qw/contenteditable contextmenu draggable dropzone hidden role spellcheck tabindex translate/;
 my @html5_global_user_attr = (qr/^aria-/, qr/^data-/);
