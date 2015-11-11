@@ -2,7 +2,7 @@ package HTML::Lint::Pluggable;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use parent qw/ HTML::Lint /;
 
@@ -64,7 +64,7 @@ HTML::Lint::Pluggable - plugin system for HTML::Lint
 
 =head1 VERSION
 
-This document describes HTML::Lint::Pluggable version 0.05.
+This document describes HTML::Lint::Pluggable version 0.06.
 
 =head1 SYNOPSIS
 
