@@ -2,6 +2,10 @@ Revision history for Perl extension HTML::Lint::Pluggable
 
 {{$NEXT}}
 
+0.07 2016-07-13T00:32:55Z
+
+    - allow some available html5 tags. (shibayu36)
+
 0.06 2015-11-11T08:08:34Z
 
     - allow html5 <main> tag. (preaction)

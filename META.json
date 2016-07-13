@@ -4,7 +4,7 @@
       "Kenta Sato <karupa@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.5.0, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Minilla/v3.0.2, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -68,11 +68,12 @@
          "web" : "https://github.com/karupanerura/p5-HTML-Lint-Pluggable"
       }
    },
-   "version" : "0.06",
+   "version" : "0.07",
    "x_authority" : "cpan:KARUPA",
    "x_contributors" : [
       "Klaus S. Madsen <ksm@jobindex.dk>",
-      "Doug Bell <preaction@users.noreply.github.com>"
+      "Doug Bell <preaction@users.noreply.github.com>",
+      "shibayu36 <shibayu36@gmail.com>"
    ],
    "x_serialization_backend" : "JSON::PP version 2.27300"
 }
