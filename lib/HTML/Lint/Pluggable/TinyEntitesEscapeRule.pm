@@ -3,7 +3,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use parent qw/ HTML::Lint::Pluggable::WhiteList /;
 use HTML::Entities qw/%char2entity/;
@@ -30,7 +30,7 @@ HTML::Lint::Pluggable::TinyEntitesEscapeRule - allow text-use-entity error if no
 
 =head1 VERSION
 
-This document describes HTML::Lint::Pluggable::TinyEntitesEscapeRule version 0.07.
+This document describes HTML::Lint::Pluggable::TinyEntitesEscapeRule version 0.08.
 
 =head1 DEPENDENCIES
 
