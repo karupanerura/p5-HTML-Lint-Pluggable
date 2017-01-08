@@ -71,8 +71,11 @@ This document describes HTML::Lint::Pluggable version 0.07.
     $lint->only_types( HTML::Lint::Error::STRUCTURE );
     $lint->load_plugins(qw/HTML5/);
 
-    $lint->parse( $data );
-    $lint->parse_file( $filename );
+    while ( my $line = <HTML> ) {
+        $lint->parse( $line );
+    }
+    $lint->eof;
+    # or $lint->parse_file( $filename );
 
     my $error_count = $lint->errors;
 
