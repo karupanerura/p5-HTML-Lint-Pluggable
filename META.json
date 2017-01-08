@@ -4,7 +4,7 @@
       "Kenta Sato <karupa@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.0.2, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Minilla/v3.0.6, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "perl_5"
    ],
@@ -33,6 +33,8 @@
       },
       "develop" : {
          "requires" : {
+            "JSON" : "0",
+            "LWP::Simple" : "0",
             "Test::CPAN::Meta" : "0",
             "Test::MinimumVersion::Fast" : "0.04",
             "Test::PAUSE::Permissions" : "0.04",
@@ -46,6 +48,7 @@
             "HTML::Lint" : "0",
             "List::MoreUtils" : "0",
             "Module::Load" : "0",
+            "Package::Stash" : "0",
             "parent" : "0",
             "perl" : "5.008_001"
          }
@@ -75,5 +78,5 @@
       "Doug Bell <preaction@users.noreply.github.com>",
       "shibayu36 <shibayu36@gmail.com>"
    ],
-   "x_serialization_backend" : "JSON::PP version 2.27300"
+   "x_serialization_backend" : "JSON::PP version 2.27400"
 }
