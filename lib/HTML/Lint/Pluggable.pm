@@ -8,6 +8,7 @@ use parent qw/ HTML::Lint /;
 
 use Carp qw/croak/;
 use Module::Load ();
+use Package::Stash;
 
 sub new {
     my $class = shift;
@@ -17,11 +18,7 @@ sub new {
         $subclass = sprintf '%s::__ANON__::%x%x%x', $class, $$, 0+{}, int(rand(65535));
     } while $subclass->isa($class);
 
-    eval sprintf q{{
-        package %s;
-        our @ISA = qw/%s/;
-    }}, $subclass, $class;
-    die $@ if $@;
+    push @{ Package::Stash->new($subclass)->get_or_add_symbol('@ISA') } => $class;
 
     return $subclass->SUPER::new(@_);
 }
