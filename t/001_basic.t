@@ -41,74 +41,108 @@ my $has_entites_html5 = q{
 };
 
 subtest 'html5' => sub {
+    my $base_errors = do {
+        my $lint = HTML::Lint->new;
+        $lint->parse($html5);
+        $lint->eof;
+        $lint->errors;
+    };
+
     subtest 'default' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->parse($html5);
-        is scalar($lint->errors), 3;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors;
     };
 
     subtest 'load HTML5' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->load_plugins(qw/HTML5/);
         $lint->parse($html5);
-        is scalar($lint->errors), 1;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors - 2;
     };
 
     subtest 'default back' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->parse($html5);
-        is scalar($lint->errors), 3;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors;
     };
 
     subtest 'passing html5' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->load_plugins(qw/HTML5/);
         $lint->parse($passing_html5);
-        is scalar($lint->errors), 0;
+        $lint->eof;
+        is scalar($lint->errors), 0
+            or diag explain [$lint->errors];
     }
 };
 
 subtest 'tiny entities escape rule' => sub {
     local $SIG{__WARN__} = sub {};
+
+    my $base_errors = do {
+        my $lint = HTML::Lint->new;
+        $lint->parse($has_entites_html);
+        $lint->eof;
+        $lint->errors;
+    };
+
     subtest 'default' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->parse($has_entites_html);
-        is scalar($lint->errors), 4;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors;
     };
 
     subtest 'load TinyEntitesEscapeRule' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->load_plugins(qw/TinyEntitesEscapeRule/);
         $lint->parse($has_entites_html);
-        is scalar($lint->errors), 1;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors - 3;
     };
 
     subtest 'default back' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->parse($has_entites_html);
-        is scalar($lint->errors), 4;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors;
     };
 };
 
 subtest 'html5 and tiny entities escape rule' => sub {
     local $SIG{__WARN__} = sub {};
+
+    my $base_errors = do {
+        my $lint = HTML::Lint->new;
+        $lint->parse($has_entites_html5);
+        $lint->eof;
+        $lint->errors;
+    };
+
     subtest 'default' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->parse($has_entites_html5);
-        is scalar($lint->errors), 7;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors;
     };
 
     subtest 'load TinyEntitesEscapeRule and HTML5' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->load_plugins(qw/TinyEntitesEscapeRule HTML5/);
         $lint->parse($has_entites_html5);
-        is scalar($lint->errors), 2;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors - 5;
     };
 
     subtest 'default back' => sub {
         my $lint = HTML::Lint::Pluggable->new;
         $lint->parse($has_entites_html5);
-        is scalar($lint->errors), 7;
+        $lint->eof;
+        is scalar($lint->errors), $base_errors;
     };
 };
 
