@@ -7,7 +7,7 @@ use warnings;
 use parent qw/ HTML::Lint::Pluggable::WhiteList /;
 
 my %md_attrs = map { $_ => 1 } qw/
- itemid itemprop itemref itemscope itemtype /
+ itemid itemprop itemref itemscope itemtype /;
 
 sub init {
     my ( $class, $lint ) = @_;
