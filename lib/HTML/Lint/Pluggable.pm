@@ -163,6 +163,7 @@ to cpan-RT.
 =head1 SEE ALSO
 
 L<HTML::Lint>
+L<HTML::Tidy5>
 
 =head1 AUTHOR
 
