@@ -3,7 +3,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 use parent qw/ HTML::Lint::Pluggable::WhiteList /;
 use List::MoreUtils qw/any/;
@@ -287,7 +287,7 @@ Suggest to use L<HTML::Tidy5> insead of this plugin.
 
 =head1 VERSION
 
-This document describes HTML::Lint::Pluggable::HTML5 version 0.08.
+This document describes HTML::Lint::Pluggable::HTML5 version 0.09.
 
 =head1 DEPENDENCIES
 

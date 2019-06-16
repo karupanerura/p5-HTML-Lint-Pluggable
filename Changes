@@ -2,6 +2,12 @@ Revision history for Perl extension HTML::Lint::Pluggable
 
 {{$NEXT}}
 
+0.09 2019-06-16T15:14:14Z
+
+   - updated HTML5 entities
+   - fix self-closing elements in HTML5 (thanks robrwo)
+   - deprecate HTML5 plugin
+
 0.08 2017-01-08T14:41:25Z
 
     - fixed test
