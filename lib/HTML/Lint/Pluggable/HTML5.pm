@@ -278,7 +278,12 @@ __END__
 
 =head1 NAME
 
-HTML::Lint::Pluggable::HTML5 - allow HTML5 tags and attributes.
+HTML::Lint::Pluggable::HTML5 - [DEPRECATED] allow HTML5 tags and attributes.
+
+=head1 DEPRECATED
+
+This plugin is no longer be maintenance.
+Suggest to use L<HTML::Tidy5> insead of this plugin.
 
 =head1 VERSION
 
