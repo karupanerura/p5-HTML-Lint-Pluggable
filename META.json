@@ -71,7 +71,7 @@
          "web" : "https://github.com/karupanerura/p5-HTML-Lint-Pluggable"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_authority" : "cpan:KARUPA",
    "x_contributors" : [
       "Doug Bell <preaction@users.noreply.github.com>",
