@@ -8,7 +8,9 @@ our $VERSION = '0.08';
 use parent qw/ HTML::Lint::Pluggable::WhiteList /;
 use List::MoreUtils qw/any/;
 
+# refs. https://www.w3.org/TR/html5/syntax.html
 my %html5_tag = map { $_ => 1 } qw/article aside audio bdi canvas command datalist details dialog embed figcaption figure footer header hgroup keygen main mark menu menuitem meter nav output progress section source summary template time track video rb rp rt rtc ruby wbr/;
+my %html5_unclosed_tag = map { $_ => 1 } qw/area base basefont bgsound br col embed frame hr img input link meta param source track wbr/;
 
 my %html5_global_attr = map { $_ => 1 } qw/contenteditable contextmenu draggable dropzone hidden role spellcheck tabindex translate/;
 my @html5_global_user_attr = (qr/^aria-/, qr/^data-/);
@@ -248,6 +250,11 @@ sub init {
             'elem-unknown' => sub {
                 my $param = shift;
                 return 1 if $html5_tag{$param->{tag}};
+                return 0;
+            },
+            'elem-unclosed' => sub {
+                my $param = shift;
+                return 1 if $html5_unclosed_tag{$param->{tag}};
                 return 0;
             },
             'attr-unknown' => sub {
