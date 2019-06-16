@@ -27,6 +27,8 @@ sub init {
 
 __END__
 
+=for stopwords microdata
+
 =head1 NAME
 
 HTML::Lint::Pluggable::Microdata - allow microdata attributes

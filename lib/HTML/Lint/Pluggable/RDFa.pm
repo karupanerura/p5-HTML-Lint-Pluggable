@@ -28,6 +28,8 @@ sub init {
 
 __END__
 
+=for stopwords RDFa
+
 =head1 NAME
 
 HTML::Lint::Pluggable::RDFa - allow RDFa attributes
